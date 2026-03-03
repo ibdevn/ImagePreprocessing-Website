@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preprocessing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bildvorverarbeitung</h1>
+    <input type="file" id="fileInput" accept="image/*"><br>
+    <div class="controls">
+        <label for="lowThresh">Schwarz-Schwelle (&lt;=): <span id="lowVal">100</span></label><br>
+        <input type="range" id="lowThresh" min="0" max="255" value="100">
+        <label for="highThresh">Weiß-Schwelle (&gt;=): <span id="highVal">160</span></label><br>
+        <input type="range" id="highThresh" min="0" max="255" value="160">
+        <button id="processBtn">Verarbeiten</button>
+    </div>
+    <div id="previewContainer">
+        <canvas id="previewCanvas"></canvas>
+    </div>
+    <a id="downloadLink" href="#" download="processed.png" class="hidden">Bild herunterladen</a>
+
+    <script src="script.js"></script>
+</body>
+</html>

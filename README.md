@@ -5,12 +5,14 @@ Ein einfaches statisches Projekt zur Vorverarbeitung von Bildern im Browser.
 ## Funktionsumfang
 
 * Bild hochladen
-* Automatisches Zuschneiden auf ein Quadrat (zentriert)
+* Auswahl eines eigenen Quadratausschnitts durch Ziehen im Vorschaubereich (oder zentriert, wenn nichts ausgewählt)
+* Zuschneiden auf das ausgewählte Quadrat
 * Skalierung auf 35×35 Pixel
 * Umwandlung in Graustufen
 * Schwellenwertbasierte Verstärkung (standardmäßig &lt;=100 schwarz, &gt;=160 weiß)
 * Invertierung des Bildes
-* Vorschau anzeigen (vergrößert) und Schwellenwerte anpassen
+* Vorschau anzeigen – bei verarbeiteter Darstellung wird das Ergebnis auf ~350 px hochskaliert
+* Schwellenwerte anpassen
 * Ergebnis herunterladen
 
 ## Nutzung

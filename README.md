@@ -1,27 +1,21 @@
 # ImagePreprocessing-Website
 
-Ein einfaches statisches Projekt zur Vorverarbeitung von Bildern im Browser.
+Simple Flask web interface replicating the Tkinter cropping application.
 
-## Funktionsumfang
+## Features
 
-* Bild hochladen
-* Auswahl eines eigenen Quadratausschnitts durch Ziehen im Vorschaubereich (oder zentriert, wenn nichts ausgewählt)
-* Zuschneiden auf das ausgewählte Quadrat
-* Skalierung auf 35×35 Pixel
-* Umwandlung in Graustufen
-* Schwellenwertbasierte Verstärkung (standardmäßig &lt;=100 schwarz, &gt;=160 weiß)
-* Invertierung des Bildes
-* Vorschau anzeigen – bei verarbeiteter Darstellung wird das Ergebnis auf ~350 px hochskaliert
-* Schwellenwerte anpassen
-* Ergebnis herunterladen
+- Upload an image
+- Drag, zoom, and crop a central square (300x300 display) with Cropper.js
+- Backend processes crop: grayscale, contrast boost, threshold background, invert, resize to 35×35 and normalize
+- Download result as `.npy` file formatted for EMNIST
 
-## Nutzung
+## Setup
 
-1. Öffne `index.html` in einem Browser (z. B. per [VS Code Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) oder mit einem einfachen Python-HTTP-Server).
-```sh
-# im Projektordner
-python3 -m http.server 8000
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py
 ```
-2. Lade ein beliebiges Bild hoch.
-3. Passe bei Bedarf die Schwellenwerte an und klicke auf “Verarbeiten”.
-4. Über die Download-Schaltfläche das verarbeitete Bild speichern.
+
+Open http://127.0.0.1:5000/ in your browser.

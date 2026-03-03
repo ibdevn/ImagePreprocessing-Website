@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Preprocessing</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Apple-Style Crop → 35x35</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/2.0.0/cropper.min.css" rel="stylesheet">
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        #image-container { max-width: 400px; max-height: 400px; overflow: hidden; }
+        #image-container img { max-width: 100%; }
+        #controls { margin-top: 10px; }
+    </style>
 </head>
 <body>
-    <h1>Bildvorverarbeitung</h1>
-    <p>Wähle mit der Maus einen Bereich im Vorschau-Bild aus (ziehen) oder lasse die Auswahl leer für einen zentrierten Quadrat-Ausschnitt.</p>
-    <input type="file" id="fileInput" accept="image/*"><br>
-    <div class="controls">
-        <label for="lowThresh">Schwarz-Schwelle (&lt;=): <span id="lowVal">100</span></label><br>
-        <input type="range" id="lowThresh" min="0" max="255" value="100">
-        <label for="highThresh">Weiß-Schwelle (&gt;=): <span id="highVal">160</span></label><br>
-        <input type="range" id="highThresh" min="0" max="255" value="160">
-        <button id="processBtn">Verarbeiten</button>
+    <h1>Apple-Style Crop → 35x35</h1>
+    <input type="file" id="file-input" accept="image/*">
+    <div id="image-container">
+        <img id="preview" style="display:none;" />
     </div>
-    <div id="previewContainer">
-        <canvas id="previewCanvas"></canvas>
+    <div id="controls">
+        <button id="zoom-in" disabled>Zoom In</button>
+        <button id="zoom-out" disabled>Zoom Out</button>
+        <button id="save" disabled>Save (35x35 .npy)</button>
     </div>
-    <a id="downloadLink" href="#" download="processed.png" class="hidden">Bild herunterladen</a>
 
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/2.0.0/cropper.min.js"></script>
+    <script src="crop.js"></script>
 </body>
 </html>
